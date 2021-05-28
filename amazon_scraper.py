@@ -12,7 +12,7 @@ AMAZON_BASE_URL = "https://www.amazon.in/s"
 
 # a soup function that takes args as url,headers,parameters and return it lxml soup
 def get_soup(url,headers= {}, params=[]):
-    print("Getting: ", url)
+    # print("Getting: ", url)
     if "user-agent" not in headers:
         headers["user-agent"] = random.choice(USER_AGENTS)
     soup = BeautifulSoup(requests.get(
