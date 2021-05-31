@@ -1,28 +1,10 @@
 # Import statements
-import requests
 from urllib.parse import urljoin
-from bs4 import BeautifulSoup
-import random
-from user_agents_list import USER_AGENTS
 from pprint import pprint
+from helpers import get_soup, limiting_ouptut
 
 
 AMAZON_BASE_URL = "https://www.amazon.in/s"
-
-
-# a soup function that takes args as url,headers,parameters and return it lxml soup
-def get_soup(url,headers= {}, params=[]):
-    # print("Getting: ", url)
-    if "user-agent" not in headers:
-        headers["user-agent"] = random.choice(USER_AGENTS)
-    soup = BeautifulSoup(requests.get(
-            url,
-            headers=headers,
-            params=params
-        ).text,
-        "lxml"
-    )
-    return soup
 
 
 # function defined to extract all the available links for the query string
@@ -39,9 +21,10 @@ def get_links(query):
 
 
 # functions that takes a list of urls as args and return its details
-def get_details(links):
+def get_details(links,page):
     product_details = []
-    for link in links:
+    offset,limit = limiting_ouptut(page)
+    for link in links[offset:limit]:
         response = get_soup(
             urljoin(AMAZON_BASE_URL, link)
         )
