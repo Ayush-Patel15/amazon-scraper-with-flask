@@ -20,7 +20,7 @@ def get_links(query):
 
 
 # functions that takes a list of urls as args and return its details
-def get_details(links,page):
+def get_details(links,page=1):
     product_details = []
     offset,limit = limiting_ouptut(page)
     for link in links[offset:limit]:
@@ -79,6 +79,7 @@ def get_details(links,page):
 
 
 if __name__ == "__main__":
-    links = get_links("laptops")
+    query,page = input("Enter your query and page number(separated by space): ").split()
+    links = get_links(query)
     # print(links)
-    print(get_details(links,2))
+    print(get_details(links,page))
