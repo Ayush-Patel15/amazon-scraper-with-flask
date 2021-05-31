@@ -1,6 +1,5 @@
 # Import statements
 from urllib.parse import urljoin
-from pprint import pprint
 from helpers import get_soup, limiting_ouptut
 
 
@@ -81,4 +80,5 @@ def get_details(links,page):
 
 if __name__ == "__main__":
     links = get_links("laptops")
-    pprint(get_details(links))
+    # print(links)
+    print(get_details(links,2))
