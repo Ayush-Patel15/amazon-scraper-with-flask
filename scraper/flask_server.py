@@ -1,11 +1,11 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, render_template
 from amazon_scraper import get_links, get_details
 
 app = Flask(__name__)
 
-@app.route("/", methods=["GET"])
+@app.route("/")
 def home():
-    return jsonify("Hello, World!!")
+    return render_template("search.html")
 
 @app.route("/search")
 def search():
