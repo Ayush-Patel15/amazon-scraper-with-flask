@@ -1,33 +1,32 @@
 # Import statements
 from urllib.parse import urljoin
-from helpers import get_soup, limiting_ouptut
-
+from helpers import get_soup
+# from concurrent.futures import ThreadPoolExecutor
 
 AMAZON_BASE_URL = "https://www.amazon.in/s"
 
-
-# function defined to extract all the available links for the query string
-def get_links(query):
+# function defined to extract the top 15 links for the query string from the requested page
+def get_links(query,page):
     response = get_soup(
         AMAZON_BASE_URL,
-        params=[("k",query)]
+        params=[
+            ("k",query),
+            ("page",page)
+        ]
     )
     links = []
     tags = response.select("a.a-text-normal")
     for tag in tags:
         links.append(tag["href"])
-    return links
+    return links[0:15]                      # to get only the 15 urls
 
 
-# functions that takes a list of urls as args and return its details
-def get_details(links,page=1):
-    product_details = []
-    offset,limit = limiting_ouptut(page)
-    for link in links[offset:limit]:
-        response = get_soup(
-            urljoin(AMAZON_BASE_URL, link)
-        )
-
+# function that takes a url as args and return its details
+def get_details(link):
+    response = get_soup(
+        urljoin(AMAZON_BASE_URL, link)
+    )
+    try:
         # common attributes present for all queries
         details_section = response.select('#centerCol')[0]
         url = urljoin(AMAZON_BASE_URL,link)
@@ -74,12 +73,18 @@ def get_details(links,page=1):
             "ratings": f"{rating_stars}, ratings {total_raitngs}",
             "url": url
         }
-        product_details.append(item)
-    return product_details                      # returns a list
+        # print(item)
+    except Exception as e:
+        item = {"exception": e}
+    return item                      
 
 
 if __name__ == "__main__":
     query,page = input("Enter your query and page number(separated by space): ").split()
-    links = get_links(query)
-    # print(links)
-    print(get_details(links,page))
+    links = get_links(query,page)
+    print(f"The length of link is {len(links)}")
+    print(f"Top links are : {links}")
+    for link in links:
+        get_details(link)
+    # with ThreadPoolExecutor() as executor:
+    #     executor.map(get_details,links)
