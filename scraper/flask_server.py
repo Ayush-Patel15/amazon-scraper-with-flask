@@ -1,7 +1,7 @@
 # Imports
 from flask import Flask, json, jsonify, request, render_template
-from werkzeug.datastructures import RequestCacheControl
 from amazon_scraper import get_links, get_details
+from best_deals import deals_of_the_day
 from concurrent.futures import ThreadPoolExecutor
 
 # Initializing the app
@@ -10,7 +10,8 @@ app = Flask(__name__)
 # Route for home page
 @app.route("/")
 def home():
-    return render_template("home.html")
+    deals = deals_of_the_day()
+    return render_template("home.html", content=deals)
 
 # search path
 @app.route("/search",methods=["GET","POST"])
@@ -48,4 +49,4 @@ def search():
 
 
 if __name__ == "__main__":
-    app.run(debug=True,port=8000)
+    app.run(debug=True)

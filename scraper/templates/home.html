@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>HOME</title>
-    <link rel="stylesheet" href="static/style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
 <body>
@@ -11,6 +11,40 @@
             <input type="text" name="search" placeholder="search for your query", value="">
             <button>SEARCH</button> 
         </form>
+    </div>
+
+    <div class="best-deals-content">
+        <ul>
+            <li class="deals-item">
+                <span class="product-link">{{content[0][0]}}</span>
+                <span class="img-link">{{content[0][1]}}</span>
+            </li>
+            <li class="deals-item">
+                <span class="product-link">{{content[1][0]}}</span>
+                <span class="img-link">{{content[1][1]}}</span>
+            </li>
+            <li class="deals-item">
+                <span class="product-link">{{content[2][0]}}</span>
+                <span class="img-link">{{content[2][1]}}</span>
+            </li>
+            <li class="deals-item">
+                <span class="product-link">{{content[3][0]}}</span>
+                <span class="img-link">{{content[3][1]}}</span>
+            </li>
+            <li class="deals-item">
+                <span class="product-link">{{content[4][0]}}</span>
+                <span class="img-link">{{content[4][1]}}</span>
+            </li>
+        </ul>
+
+<!--
+    <div class="best-deals-content">
+        {% for i in range(0,5): %}
+            <span class="product-link">{{content[i][0]}}</span>
+            <span class="img-link">{{content[i][1]}}</span>
+        {% endfor %}
+    </div>   
+-->
     </div>
    </body>
 </html>
