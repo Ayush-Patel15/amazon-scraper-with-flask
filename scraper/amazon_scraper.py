@@ -6,7 +6,7 @@ from helpers import get_soup
 AMAZON_BASE_URL = "https://www.amazon.in/s"
 
 # function defined to extract the top 15 links for the query string from the requested page
-def get_links(query,page):
+def get_links(query,page=1):
     response = get_soup(
         AMAZON_BASE_URL,
         params=[
