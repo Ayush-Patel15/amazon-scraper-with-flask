@@ -3,9 +3,13 @@
 <head>
     <title>HOME</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='image.css') }}">
 </head>
 
-<body>
+<body class="gradient-background">
+
+    
+
     <div class="main">
         <form action="/search" method="POST">
             <input type="text" name="search" placeholder="search for your query", value="">
@@ -13,33 +17,118 @@
         </form>
     </div>
 
-    <div class="best-deals-content">
-        <ul>
-            <li class="deals-item">
-                <span class="product-link">
+    <!-- Deals Of The Section Start -->
+
+    <div >
+
+        <br>
+        <br> <br>
+        <br> <br>
+        <br>    
+        <div class="one">
+            <h1>Deals Of The Day</h1>
+          </div>
+
+        <div id="wrap">
+            <div id="columns" class="columns_4">
+              <figure>
+                <img src="{{content[0][1]}}" width="200px" height="250px">
+                <figcaption>Green Checkered Shirt</figcaption>
+                <span class="price">$44</span>
+                <a class="button" href={{content[0][0]}}>Buy Now</a>
+              </figure>
+        
+              <figure>
+                <img src="{{content[1][1]}}" width="200px" height="250px">
+                <figcaption>Green and Black Flowers</figcaption>
+                <span class="price">$44</span>
+                <a class="button" href={{content[1][0]}}>Buy Now</a>
+              </figure>
+        
+              <figure>
+                <img src="{{content[2][1]}}" width="200px" height="250px">
+                <figcaption>Black Dots</figcaption>
+                <span class="price">$44</span>
+                <a class="button" href={{content[2][0]}}>Buy Now</a>
+              </figure>
+        
+              <figure>
+                <img src="{{content[3][1]}}" width="200px" height="250px">
+                <figcaption>Red Flowy</figcaption>
+                <span class="price">$44</span>
+                <a class="button" href={{content[3][0]}}>Buy Now</a>
+              </figure>
+        
+
+              <br><br>
+
+              <figure>
+                <img src="{{content[4][1]}}" width="200px" height="250px">
+                <figcaption>Yellow Button-Up</figcaption>
+                <span class="price">$44</span>
+                <a class="button" href={{content[4][0]}}>Buy Now</a>
+              </figure>
+
+              <figure>
+                <img src="{{content[5][1]}}" width="200px" height="250px">
+                <figcaption>Yellow Button-Up</figcaption>
+                <span class="price">$44</span>
+                <a class="button" href={{content[5][0]}}>Buy Now</a>
+              </figure>
+
+              <figure>
+                <img src="{{content[6][1]}}" width="200px" height="250px">
+                <figcaption>Yellow Button-Up</figcaption>
+                <span class="price">$44</span>
+                <a class="button" href={{content[6][0]}}>Buy Now</a>
+              </figure>
+
+              <figure>
+                <img src="{{content[0][1]}}" width="200px" height="250px">
+                <figcaption>Green Checkered Shirt</figcaption>
+                <span class="price">$44</span>
+                <a class="button" href={{content[0][0]}}>Buy Now</a>
+              </figure>
+
+              
+            </div>
+        </div>
+        
+
+
+            <!-- Deal Of The Day Section End -->
+
+
+
+        <!-- <ul>
+            <li>
+                <span >
                     <a href={{content[0][0]}}>
                        <img src={{content[0][1]}}>
                     </a>
                 </span>
             </li>
-            <li class="deals-item">
-                <span class="product-link">{{content[1][0]}}</span>
-                <span class="img-link">{{content[1][1]}}</span>
+            <li >
+                <span >{{content[1][0]}}</span>
+                <span >{{content[1][1]}}</span>
             </li>
-            <li class="deals-item">
-                <span class="product-link">{{content[2][0]}}</span>
-                <span class="img-link">{{content[2][1]}}</span>
+            <li >
+                <span >{{content[2][0]}}</span>
+                <span >{{content[2][1]}}</span>
             </li>
-            <li class="deals-item">
-                <span class="product-link">{{content[3][0]}}</span>
-                <span class="img-link">{{content[3][1]}}</span>
+            <li >
+                <span >{{content[3][0]}}</span>
+                <span >{{content[3][1]}}</span>
             </li>
-            <li class="deals-item">
-                <span class="product-link">{{content[4][0]}}</span>
-                <span class="img-link">{{content[4][1]}}</span>
+            <li >
+                <span >{{content[4][0]}}</span>
+                <span >{{content[4][1]}}</span>
             </li>
-        </ul>
+        </ul> -->
 
+
+
+        
 <!--
     <div class="best-deals-content">
         {% for i in range(0,5): %}
