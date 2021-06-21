@@ -33,6 +33,7 @@ def get_details(link):
         title = details_section.select('#productTitle')[0].text.strip()
         brand = details_section.select('#bylineInfo')[0].text
         description = details_section.select('#feature-bullets')[0].select(".a-list-item")
+        image_src = response.select("#imgTagWrapperId")[0].select("img")[0]["src"]
 
         # get the normal price or the special deal price
         if details_section.select('#priceblock_ourprice'):
@@ -61,9 +62,14 @@ def get_details(link):
         except Exception:
             rating_stars = "0.0 out of 5 stars"
             total_raitngs = "0"
+        try:
+            top_review = response.select(".reviewText.review-text-content")[0].text.replace("\n","")
+        except Exception:
+            top_review = "no review available for now..."
 
         item = {
             "title": title,
+            "image_src": image_src,
             "store/brand": brand,
             "price": price,
             "emi": emi.strip(),
@@ -71,6 +77,7 @@ def get_details(link):
             "availability": availability,
             "seller": sold_by,
             "ratings": f"{rating_stars}, ratings {total_raitngs}",
+            "review": top_review,
             "url": url
         }
         # print(item)
