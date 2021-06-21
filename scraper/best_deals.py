@@ -25,4 +25,6 @@ def deals_of_the_day():
         deals_of_the_day()
 
 if __name__ == "__main__":
-    print(deals_of_the_day())
+    deals = deals_of_the_day()
+    print(deals)
+    print(len(deals))
