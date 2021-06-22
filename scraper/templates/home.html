@@ -1,79 +1,92 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>HOME</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='image.css') }}">
+  <title>HOME</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='image.css') }}">
 </head>
 
 <body class="gradient-background">
 
-    
 
-    <div class="main">
-        <form action="/search" method="POST">
-            <input type="text" name="search" placeholder="search for your query", value="">
-            <button>SEARCH</button> 
-        </form>
+
+  <div class="main">
+    <form action="/search" method="POST">
+      <input type="text" name="search" placeholder="Search for your query" value="">
+      <select id="pages" name="pages">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+      </select>
+      <button>Search</button>
+
+
+    </form>
+  </div>
+
+  <!-- Deals Of The Section Start -->
+
+  <div>
+
+
+    <div class="one">
+      <h1>Deals Of The Day</h1>
     </div>
 
-    <!-- Deals Of The Section Start -->
+    <div id="wrap">
+      <div id="columns" class="columns_4">
 
-    <div >
+        <figure style="margin-right: 50px; margin-bottom: 50px;">
+          <img src="{{content[0][1]}}" width="200px" height="250px">
+          <figcaption>{{content[0][0].split("/")[1]}}</figcaption>
+          <a href={{content[0][0]}}><button class="buy">Buy Now</button></a>
+        </figure>
 
-        <br>
-        <br> <br>
-        <br> <br>
-        <br>    
-        <div class="one">
-            <h1>Deals Of The Day</h1>
-          </div>
+        <figure style="margin-right: 50px;">
+          <img src="{{content[1][1]}}" width="200px" height="250px">
+          <figcaption>{{content[1][0].split("/")[1]}}</figcaption>
+          <a href={{content[1][0]}}><button class="buy">Buy Now</button></a>
+        </figure>
 
-        <div id="wrap">
-            <div id="columns" class="columns_4">
-              <figure>
-                <img src="{{content[0][1]}}" width="200px" height="250px">
-                <figcaption>{{content[0][0].split("/")[1]}}</figcaption>
-                <a class="button" href={{content[0][0]}}>Buy Now</a>
-              </figure>
-        
-              <figure>
-                <img src="{{content[1][1]}}" width="200px" height="250px">
-                <figcaption>{{content[1][0].split("/")[1]}}</figcaption>
-                <a class="button" href={{content[1][0]}}>Buy Now</a>
-              </figure>
-        
-              <figure>
-                <img src="{{content[2][1]}}" width="200px" height="250px">
-                <figcaption>{{content[2][0].split("/")[1]}}</figcaption>
-                <a class="button" href={{content[2][0]}}>Buy Now</a>
-              </figure>
+        <figure style="margin-right: 50px;">
+          <img src="{{content[2][1]}}" width="200px" height="250px">
+          <figcaption>{{content[2][0].split("/")[1]}}</figcaption>
+          <a href={{content[2][0]}}><button class="buy">Buy Now</button></a>
+        </figure>
 
-              <br><br>
-        
-              <figure>
-                <img src="{{content[3][1]}}" width="200px" height="250px">
-                <figcaption>{{content[3][0].split("/")[1]}}</figcaption>
-                <a class="button" href={{content[3][0]}}>Buy Now</a>
-              </figure>
 
-              <figure>
-                <img src="{{content[4][1]}}" width="200px" height="250px">
-                <figcaption>{{content[4][0].split("/")[1]}}</figcaption>
-                <a class="button" href={{content[4][0]}}>Buy Now</a>
-              </figure>
+        <figure style="margin-right: 50px;">
+          <img src="{{content[3][1]}}" width="200px" height="250px">
+          <figcaption>{{content[3][0].split("/")[1]}}</figcaption>
+          <a href={{content[3][0]}}><button class="buy">Buy Now</button></a>
+        </figure>
 
-              <figure>
-                <img src="{{content[5][1]}}" width="200px" height="250px">
-                <figcaption>{{content[5][0].split("/")[1]}}</figcaption>
-                <a class="button" href={{content[5][0]}}>Buy Now</a>
-              </figure>
-              
-            </div>
-        </div>
+        <figure style="margin-right: 50px;">
+          <img src="{{content[4][1]}}" width="200px" height="250px">
+          <figcaption>{{content[4][0].split("/")[1]}}</figcaption>
+          <a href={{content[4][0]}}><button class="buy">Buy Now</button></a>
+        </figure>
 
-            <!-- Deal Of The Day Section End -->
+        <figure style="margin-right: 50px;">
+          <img src="{{content[5][1]}}" width="200px" height="250px">
+          <figcaption>{{content[5][0].split("/")[1]}}</figcaption>
+          <a href={{content[5][0]}}><button class="buy">Buy Now</button></a>
+        </figure>
 
+      </div>
     </div>
-   </body>
+
+    <!-- Deal Of The Day Section End -->
+
+  </div>
+</body>
+
 </html>
