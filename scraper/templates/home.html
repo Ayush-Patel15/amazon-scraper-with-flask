@@ -1,53 +1,92 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>HOME</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <title>HOME</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='image.css') }}">
 </head>
 
-<body>
-    <div class="main">
-        <form action="/search" method="POST">
-            <input type="text" name="search" placeholder="search for your query", value="">
-            <button>SEARCH</button> 
-        </form>
+<body class="gradient-background">
+
+
+
+  <div class="main">
+    <form action="/search" method="POST">
+      <input type="text" name="search" placeholder="Search for your query" value="">
+      <select id="pages" name="pages">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+      </select>
+      <button>Search</button>
+
+
+    </form>
+  </div>
+
+  <!-- Deals Of The Section Start -->
+
+  <div>
+
+
+    <div class="one">
+      <h1>Deals Of The Day</h1>
     </div>
 
-    <div class="best-deals-content">
-        <ul>
-            <li class="deals-item">
-                <span class="product-link">
-                    <a href={{content[0][0]}}>
-                       <img src={{content[0][1]}}>
-                    </a>
-                </span>
-            </li>
-            <li class="deals-item">
-                <span class="product-link">{{content[1][0]}}</span>
-                <span class="img-link">{{content[1][1]}}</span>
-            </li>
-            <li class="deals-item">
-                <span class="product-link">{{content[2][0]}}</span>
-                <span class="img-link">{{content[2][1]}}</span>
-            </li>
-            <li class="deals-item">
-                <span class="product-link">{{content[3][0]}}</span>
-                <span class="img-link">{{content[3][1]}}</span>
-            </li>
-            <li class="deals-item">
-                <span class="product-link">{{content[4][0]}}</span>
-                <span class="img-link">{{content[4][1]}}</span>
-            </li>
-        </ul>
+    <div id="wrap">
+      <div id="columns" class="columns_4">
+      <center>
+        <figure style="margin-right: 25px; margin-bottom: 25px;">
+          <img src="{{content[0][1]}}" width="100px" height="150px">
+          <figcaption>{{content[0][0].split("/")[1]}}</figcaption>
+          <a href={{url[0]}}{{content[0][0]}}><button class="buy">Buy Now</button></a>
+        </figure>
 
-<!--
-    <div class="best-deals-content">
-        {% for i in range(0,5): %}
-            <span class="product-link">{{content[i][0]}}</span>
-            <span class="img-link">{{content[i][1]}}</span>
-        {% endfor %}
-    </div>   
--->
+        <figure style="margin-right: 25px; margin-bottom: 25px;">
+          <img src="{{content[1][1]}}" width="100px" height="150px">
+          <figcaption>{{content[1][0].split("/")[1]}}</figcaption>
+          <a href={{url[0]}}{{content[1][0]}}><button class="buy">Buy Now</button></a>
+        </figure>
+
+        <figure style="margin-right: 25px; margin-bottom: 25px;">
+          <img src="{{content[2][1]}}" width="100px" height="150px">
+          <figcaption>{{content[2][0].split("/")[1]}}</figcaption>
+          <a href={{url[0]}}{{content[2][0]}}><button class="buy">Buy Now</button></a>
+        </figure>
+
+
+        <figure style="margin-right: 25px; margin-bottom: 25px;">
+          <img src="{{content[3][1]}}" width="100px" height="150px">
+          <figcaption>{{content[3][0].split("/")[1]}}</figcaption>
+          <a href={{url[0]}}{{content[3][0]}}><button class="buy">Buy Now</button></a>
+        </figure>
+
+        <figure style="margin-right: 25px; margin-bottom: 25px;">
+          <img src="{{content[4][1]}}" width="100px" height="150px">
+          <figcaption>{{content[4][0].split("/")[1]}}</figcaption>
+          <a href={{url[0]}}{{content[4][0]}}><button class="buy">Buy Now</button></a>
+        </figure>
+
+        <figure style="margin-right: 25px; margin-bottom: 25px;">
+          <img src="{{content[5][1]}}" width="100px" height="150px">
+          <figcaption>{{content[5][0].split("/")[1]}}</figcaption>
+          <a href={{url[0]}}{{content[5][0]}}><button class="buy">Buy Now</button></a>
+        </figure>
+      </center>
+      </div>
     </div>
-   </body>
+
+    <!-- Deal Of The Day Section End -->
+
+  </div>
+</body>
+
 </html>
