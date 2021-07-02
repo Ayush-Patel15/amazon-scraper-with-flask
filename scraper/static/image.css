@@ -84,9 +84,6 @@ h1 {
    border-radius: 5%;
    border-color: black;
 }
-.columns_4 figure:nth-child(4){
-	margin-right: 0;
-}
 
 #columns figure:hover{
 	-webkit-transform: scale(1.1);
@@ -107,7 +104,6 @@ div#columns figure {
 	margin: 0 0px 15px;
 	-webkit-column-break-inside: avoid;
 	-moz-column-break-inside: avoid;
-	column-break-inside: avoid;
 	padding: 15px;
 	padding-bottom: 5px;
 	background: -webkit-linear-gradient(45deg, #FFF, #F9F9F9);
