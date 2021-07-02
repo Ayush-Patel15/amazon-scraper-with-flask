@@ -10,8 +10,9 @@ app = Flask(__name__)
 # Route for home page
 @app.route("/")
 def home():
+    urls = ["https://www.amazon.in"]
     deals = deals_of_the_day()
-    return render_template("home.html", content=deals)
+    return render_template("home.html", content=deals, url=urls)
 
 # search path
 @app.route("/search",methods=["GET","POST"])
@@ -19,9 +20,9 @@ def search():
     try:
         # With search bar present in page or "home.html"
         query = request.form.get("search")
+        page = request.form.get("pages")
         if query:
             data = []
-            page = 1
             links = get_links(query,page)
             with ThreadPoolExecutor() as executor:
                 results = executor.map(get_details,links)
