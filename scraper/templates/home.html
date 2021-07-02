@@ -5,6 +5,16 @@
   <title>HOME</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='image.css') }}">
+
+    <!--FONT AWESOME-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!--GOOGLE FONTS-->
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet"> 
+
+
+
 </head>
 
 <body class="gradient-background">
@@ -44,38 +54,38 @@
         <figure style="margin-right: 25px; margin-bottom: 25px;">
           <img src="{{content[0][1]}}" width="100px" height="150px">
           <figcaption>{{content[0][0].split("/")[1]}}</figcaption>
-          <a href={{url[0]}}{{content[0][0]}}><button class="buy">Buy Now</button></a>
+          <a href={{url[0]}}{{content[0][0]}} target="_blank"><button class="buy">Buy Now</button></a>
         </figure>
 
         <figure style="margin-right: 25px; margin-bottom: 25px;">
           <img src="{{content[1][1]}}" width="100px" height="150px">
           <figcaption>{{content[1][0].split("/")[1]}}</figcaption>
-          <a href={{url[0]}}{{content[1][0]}}><button class="buy">Buy Now</button></a>
+          <a href={{url[0]}}{{content[1][0]}} target="_blank"><button class="buy">Buy Now</button></a>
         </figure>
 
         <figure style="margin-right: 25px; margin-bottom: 25px;">
           <img src="{{content[2][1]}}" width="100px" height="150px">
           <figcaption>{{content[2][0].split("/")[1]}}</figcaption>
-          <a href={{url[0]}}{{content[2][0]}}><button class="buy">Buy Now</button></a>
+          <a href={{url[0]}}{{content[2][0]}} target="_blank"><button class="buy">Buy Now</button></a>
         </figure>
 
 
         <figure style="margin-right: 25px; margin-bottom: 25px;">
           <img src="{{content[3][1]}}" width="100px" height="150px">
           <figcaption>{{content[3][0].split("/")[1]}}</figcaption>
-          <a href={{url[0]}}{{content[3][0]}}><button class="buy">Buy Now</button></a>
+          <a href={{url[0]}}{{content[3][0]}} target="_blank"><button class="buy">Buy Now</button></a>
         </figure>
 
         <figure style="margin-right: 25px; margin-bottom: 25px;">
           <img src="{{content[4][1]}}" width="100px" height="150px">
           <figcaption>{{content[4][0].split("/")[1]}}</figcaption>
-          <a href={{url[0]}}{{content[4][0]}}><button class="buy">Buy Now</button></a>
+          <a href={{url[0]}}{{content[4][0]}} target="_blank"><button class="buy">Buy Now</button></a>
         </figure>
 
         <figure style="margin-right: 25px; margin-bottom: 25px;">
           <img src="{{content[5][1]}}" width="100px" height="150px">
           <figcaption>{{content[5][0].split("/")[1]}}</figcaption>
-          <a href={{url[0]}}{{content[5][0]}}><button class="buy">Buy Now</button></a>
+          <a href={{url[0]}}{{content[5][0]}} target="_blank"><button class="buy">Buy Now</button></a>
         </figure>
       </center>
       </div>
@@ -84,6 +94,33 @@
     <!-- Deal Of The Day Section End -->
 
   </div>
+
+  <hr style="height: 2px;">
+
+  <!-- Footer  Section Start -->
+
+
+  <footer>
+    <div class="footer">
+    <div class="row">
+    <a href="#"><i class="fa fa-github" target="_blank"></i></a>
+    <a href="mailto:ayushpatel@gmail.com" target="_blank"><i class="fa fa-envelope"></i></a>
+    <a href="#"><i class="fa fa-linkedin" target="_blank"></i></a>
+
+    </div>
+    
+
+    
+    <div class="row" style="background-color: rgb(172, 241, 207); padding: 20px;">
+    Developed And Designed With ❤ By @Patel
+    </div>
+    </div>
+    </footer>
+
+
+
+  <!-- Footer Section End  -->
+
 </body>
 
 </html>
