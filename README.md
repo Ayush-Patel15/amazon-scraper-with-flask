@@ -91,11 +91,11 @@ Recommended [here](https://chrome.google.com/webstore/detail/json-formatter/bcji
 
 ## Images
 
-<img src="images/home_page.JPG" width="300" height="350">
-<img src="images/home_page_with_search_query.JPG" width="450" height="400">
+<img src="images/home_page.JPG" width="500" height="550">
+<img src="images/home_page_with_search_query.JPG" width="600" height="400">
 <br>
-<img src="images/output_page_using_search_bar.JPG" width="300" height="350">
-<img src="images/output_page_using_address_bar.JPG" width="300" height="350">
+<img src="images/output_page_using_search_bar.JPG" width="500" height="550">
+<img src="images/output_page_using_address_bar.JPG" width="500" height="550">
 
 <br>
 
