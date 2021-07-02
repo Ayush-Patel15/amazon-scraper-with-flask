@@ -1,4 +1,4 @@
-# Advanced amazon scraper(bs4) integrated with flask and pagination support
+# Advanced scraper(bs4) integrated with flask and pagination support
 
 It is a combination of requests, bs4 and flask that crawls the source and provides some descriptive details of a product. Details are:
 
@@ -10,14 +10,11 @@ It is a combination of requests, bs4 and flask that crawls the source and provid
 - Seller's Name
 - Description
 - Ratings
+- Image source
+- Top rating
 - Url (to visit)
 
 `NOTE: As the source for now is only amazon.in, so it will work only for any e-commerce product available/listed on amazon`
-
-
-## Workflow
-
-TODO: Going to add soon......
 
 
 ## Installation
@@ -60,9 +57,11 @@ Enter your query and page number(separated by space): laptops 2
 #### WITH FLASK SERVER:
 
 - Running the above flask command `python flask_server.py` will provide your local flask server.
-(local host example: http://127.0.0.1:8000/) or something like this...
+(local host example: http://127.0.0.1:5000/) or something like this...
 
-- After copy and pasting, You will see a output saying as `Hello, World!!`. Confirms that flask server setup is successful.
+- Copy and paste the local host to your browser to visit the home page and start searching for a item.
+
+##### OR
 
 - Path defined to search a query is as follows:
 
@@ -78,6 +77,27 @@ Recommended [here](https://chrome.google.com/webstore/detail/json-formatter/bcji
 
 `NOTE: As the source for now is only amazon.in, so it will work only for any e-commerce product available/listed on amazon`
 
+
+## Workflow
+
+- Complete the installation process, and visit the home page.
+
+- It reads your query from search bar and pages from option tag.
+
+- Parses it to a function that goes to each of the products individual urls and extract th required/available informations
+
+- Returns all the infomation in a JSON format (limited to 15 items).
+
+
+## Images
+
+<img src="images/home_page.JPG" width="500" height="550">
+<img src="images/home_page_with_search_query.JPG" width="600" height="400">
+<br>
+<img src="images/output_page_using_search_bar.JPG" width="500" height="550">
+<img src="images/output_page_using_address_bar.JPG" width="500" height="550">
+
+<br>
 
 ### Thank you so much for your precious time!!
 ## Always feel free to contribute or suggest some features/bugs :)
