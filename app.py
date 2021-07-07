@@ -1,7 +1,7 @@
 # Imports
-from flask import Flask, json, jsonify, request, render_template
-from amazon_scraper import get_links, get_details
-from best_deals import deals_of_the_day
+from flask import Flask, jsonify, request, render_template
+from scraper.amazon_scraper import get_links, get_details
+from scraper.best_deals import main_deals
 from concurrent.futures import ThreadPoolExecutor
 
 # Initializing the app
@@ -11,7 +11,7 @@ app = Flask(__name__)
 @app.route("/")
 def home():
     urls = ["https://www.amazon.in"]
-    deals = deals_of_the_day()
+    deals = main_deals()
     return render_template("home.html", content=deals, url=urls)
 
 # search path

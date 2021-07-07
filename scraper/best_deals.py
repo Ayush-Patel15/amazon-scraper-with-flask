@@ -1,5 +1,5 @@
 # import statements 
-from helpers import get_soup
+from scraper.helpers import get_soup
 import random
 
 BEST_DEALS_URL = "https://www.amazon.in/"
@@ -22,9 +22,20 @@ def deals_of_the_day():
         items = list(zip(deals_link,images_link))
         return items
     except Exception:
-        deals_of_the_day()
+        pass
+
+def main_deals():
+    result = deals_of_the_day()
+    if result == None:
+        try:
+            deals = deals_of_the_day()
+        except Exception:
+            deals = [("no data","no image"),("no data","no image"),("no data","no image"),("no data","no image"),("no data","no image"),("no data","no image"),("no data","no image")]
+    else:
+        deals = result
+    return deals
 
 if __name__ == "__main__":
-    deals = deals_of_the_day()
+    deals = main_deals()
     print(deals)
-    print(len(deals))
+    # print(len(deals))
