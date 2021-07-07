@@ -27,16 +27,16 @@ It is a combination of requests, bs4 and flask that crawls the source and provid
 pip install -r requirements.txt
 ```
 
-- You are ready to start. Visit to base directory `scraper` and run 
+- You are ready to start. Visit to base directory `scraper`, run to see the output in cmd/terminal
 
 ```
 python amazon_scraper.py
 ```
 
-to see the output in cmd/terminal or to activate flask server locally, run
+- to activate flask server locally, run
 
 ```
-python flask_server.py
+python app.py
 ```
 
 
@@ -56,7 +56,7 @@ Enter your query and page number(separated by space): laptops 2
 
 #### WITH FLASK SERVER:
 
-- Running the above flask command `python flask_server.py` will provide your local flask server.
+- Running the above flask command `python app.py` will provide your local flask server.
 (local host example: http://127.0.0.1:5000/) or something like this...
 
 - Copy and paste the local host to your browser to visit the home page and start searching for a item.
