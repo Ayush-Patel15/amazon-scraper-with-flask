@@ -1,6 +1,6 @@
 # Import statements
 from urllib.parse import urljoin
-from helpers import get_soup
+from .helpers import get_soup
 # from concurrent.futures import ThreadPoolExecutor
 
 AMAZON_BASE_URL = "https://www.amazon.in/s"

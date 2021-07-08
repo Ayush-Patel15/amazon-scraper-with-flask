@@ -1,5 +1,5 @@
 # import statements 
-from helpers import get_soup
+from .helpers import get_soup
 import random
 
 BEST_DEALS_URL = "https://www.amazon.in/"
