@@ -27,13 +27,7 @@ It is a combination of requests, bs4 and flask that crawls the source and provid
 pip install -r requirements.txt
 ```
 
-- You are ready to start. Visit to base directory `scraper`, run to see the output in cmd/terminal
-
-```
-python amazon_scraper.py
-```
-
-- to activate flask server locally, run
+- You are ready to start. To activate flask server locally, run
 
 ```
 python app.py
@@ -41,20 +35,6 @@ python app.py
 
 
 ## How to Query?
-
-#### WITH CMD/TERMINAL:
-
-- Running the above cmd command `python amazon_scraper.py` will prompt user to provide an input as:
-
-```
-Enter your query and page number(separated by space): laptops 2
-```
-
-- You can provide your query/search_item separated by a page number. (Each page contains list of 15 items in output)
-
-- Output will be displayed in your cmd/terminal.
-
-#### WITH FLASK SERVER:
 
 - Running the above flask command `python app.py` will provide your local flask server.
 (local host example: http://127.0.0.1:5000/) or something like this...
