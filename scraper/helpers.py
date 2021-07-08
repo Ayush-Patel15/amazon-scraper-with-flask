@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import random
-from scraper.user_agents_list import USER_AGENTS
+from user_agents_list import USER_AGENTS
 
 # a soup function that takes args as url,headers,parameters and return it lxml soup
 def get_soup(url,headers= {}, params=[]):

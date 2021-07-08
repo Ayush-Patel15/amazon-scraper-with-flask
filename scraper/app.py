@@ -1,7 +1,7 @@
 # Imports
 from flask import Flask, jsonify, request, render_template
-from scraper.amazon_scraper import get_links, get_details
-from scraper.best_deals import main_deals
+from amazon_scraper import get_links, get_details
+from best_deals import main_deals
 from concurrent.futures import ThreadPoolExecutor
 
 # Initializing the app
