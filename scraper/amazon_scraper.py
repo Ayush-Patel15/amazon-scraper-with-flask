@@ -18,7 +18,7 @@ def get_links(query,page=1):
     tags = response.select("a.a-text-normal")
     for tag in tags:
         links.append(tag["href"])
-    return links[0:15]                      # to get only the 15 urls
+    return links[0:10]                      # to get only the 10 urls
 
 
 # function that takes a url as args and return its details

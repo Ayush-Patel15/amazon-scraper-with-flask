@@ -1,6 +1,6 @@
 # Advanced scraper(bs4) integrated with flask and pagination support
 
-It is a combination of requests, bs4 and flask that crawls the source and provides some descriptive details of a product. Details are:
+It is a combination of requests, bs4 and flask that crawls the source and provides some descriptive details of a product. Pre-defined html template is used for displaying the content of home page i.e. best deals. Details are:
 
 - Title
 - Brand
