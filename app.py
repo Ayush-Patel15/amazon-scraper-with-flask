@@ -12,6 +12,7 @@ app = Flask(__name__)
 def home():
     urls = ["https://www.amazon.in"]
     deals = main_deals()
+    # print(deals)
     return render_template("home.html", content=deals, url=urls)
 
 # search path

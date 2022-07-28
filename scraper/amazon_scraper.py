@@ -36,8 +36,8 @@ def get_details(link):
         image_src = response.select("#imgTagWrapperId")[0].select("img")[0]["src"]
 
         # get the normal price or the special deal price
-        if details_section.select('#priceblock_ourprice'):
-            price = details_section.select('#priceblock_ourprice')[0].text.replace("\xa0","")
+        if details_section.select('.a-offscreen'):
+            price = details_section.select('.a-offscreen')[0].text.replace("\xa0","")
         elif details_section.select('#priceblock_dealprice'):
             price = details_section.select('#priceblock_dealprice')[0].text.replace("\xa0","")
         else:

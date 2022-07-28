@@ -27,10 +27,7 @@ def deals_of_the_day():
 def main_deals():
     result = deals_of_the_day()
     if result == None:
-        try:
-            deals = deals_of_the_day()
-        except Exception:
-            deals = [("no data","no image"),("no data","no image"),("no data","no image"),("no data","no image"),("no data","no image"),("no data","no image"),("no data","no image")]
+        deals = [("no data","no image"),("no data","no image"),("no data","no image"),("no data","no image"),("no data","no image"),("no data","no image"),("no data","no image")]
     else:
         deals = result
     return deals
